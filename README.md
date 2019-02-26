@@ -19,6 +19,6 @@ https://campaignwiki.org/halberdsnhelmets/random/en?rules=halberds-n-helmets&cla
 ## Usage
 
 ```
-npm ihttps://campaignwiki.org/halberdsnhelmets/random/en?rules=halberds-n-helmets&class=magic-user
+npm i
 npm start
 ```
