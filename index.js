@@ -19,7 +19,7 @@ const sleep = (millis) => {
   return new Promise(resolve => setTimeout(resolve, millis))
 }
 
-const savePdf = async (browser, baseUrl, characterClass, counter) => {
+const savePdf = async (browser, baseUrl, characterClass) => {
   const page = await browser.newPage()
   await page.goto(baseUrl + characterClass)
   await page.pdf({
@@ -49,7 +49,7 @@ const savePdf = async (browser, baseUrl, characterClass, counter) => {
     console.log('Fetching ' + maxCharacters + ' ' + characterClass + 's...')
     for (i = 1; i <= maxCharacters; i++) {
       console.log('Requesting ' + characterClass + ' #' + i)
-      await savePdf(browser, baseUrl, characterClass, i)
+      await savePdf(browser, baseUrl, characterClass)
       await sleep(delay)
     }
   }
