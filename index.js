@@ -32,7 +32,7 @@ const savePdf = async (browser, baseUrl, characterClass, counter) => {
 
   const baseUrl = 'https://campaignwiki.org/halberdsnhelmets/random/en?rules=halberds-n-helmets&class='
   const maxCharacters = 10
-  const delay = 3000 // 3 seconds
+  const delay = 2000
   // random order to fetch class PDFs.
   const characterClasses = shuffle([
     'dwarf',
