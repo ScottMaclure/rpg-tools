@@ -8,7 +8,6 @@
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
-const process = require('process')
 
 const CHARGEN_URL = 'http://character.totalpartykill.ca/lotfp/text/'
 
@@ -51,15 +50,13 @@ const getCharacter = () => {
 const writeCharacter = (charText, charClass, outputDir) => {
   let fileName = ['lotfp', charClass, Date.now()].join('-') +  '.txt'
   let outputPath = path.join(outputDir, fileName)
-  console.log('outputPath:', outputPath)
-  process.exit('testing')
   return new Promise((resolve, reject) => {
-      fs.writeFile(outputPath, charText, function(err) {
-          if(err) {
-            reject(err)
-          }
-          resolve('Wrote char to ', outputPath)
-      })
+    fs.writeFile(outputPath, charText, function(err) {
+      if(err) {
+        reject(err)
+      }
+      resolve(outputPath)
+    })
   })
 }
 
@@ -67,7 +64,6 @@ const writeCharacter = (charText, charClass, outputDir) => {
   args = getArgs()
   classes = args.classes.split(',')
   let outputDir = path.resolve(args.output_dir)
-  console.log('classes:', classes, 'outputDir:', outputDir)
 
   for (let i = 1; i <= args.number; i++) {
     console.log('Generating character #', i)
@@ -79,9 +75,8 @@ const writeCharacter = (charText, charClass, outputDir) => {
             i-- // get another one
             continue
         }
-        console.log('Valid charClass:', charClass)
         let filePath = await writeCharacter(charText, charClass, outputDir)
-        console.log('Wrote char to ', filePath)
+        console.log('Saved', filePath)
     } catch (e) {
         console.error(e)
     }
