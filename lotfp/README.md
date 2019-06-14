@@ -25,7 +25,7 @@ Optional arguments:
 
 ```bash
 smac@ludo:/path/to/rpg-tools/lotfp
-$ node index.js -n 3
+$ node ./index.js -n 99 -o /path/to/pregens
 Namespace {
   number: '3',
   classes: 'cleric,fighter,magic-user,specialist',
@@ -33,9 +33,9 @@ Namespace {
 Generating character # 1
 Invalid class dwarf getting another.
 Generating character # 1
-Saved /path/to/rpg-tools/lotfp/output/lotfp-magic-user-1560493056528.txt
+Saved /path/to/pregens/lotfp-magic-user-1560493056528.txt
 Generating character # 2
-Saved /path/to/rpg-tools/lotfp/output/lotfp-cleric-1560493057052.txt
+Saved /path/to/pregens/lotfp-cleric-1560493057052.txt
 Generating character # 3
-Saved /path/to/rpg-tools/lotfp/output/lotfp-cleric-1560493057615.txt
+Saved /path/to/pregens/lotfp-cleric-1560493057615.txt
 ```
