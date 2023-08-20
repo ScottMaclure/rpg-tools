@@ -28,7 +28,8 @@ if __name__ == '__main__':
 	for i in range(100):
 		print(f"Generating PC {i+1}.")
 		driver.get(TPK_BASIC_URL)
-		driver.save_screenshot(f"./out/dnd-bx-pc-{datetime.now().strftime('%Y%m%d-%H%M%S')}.png")
+		#driver.save_screenshot(f"./out/dnd-bx-pc-{datetime.now().strftime('%Y%m%d-%H%M%S')}.png")
+		driver.save_screenshot(f"./out/dnd-bx-pc-{i+1:03}.png")
 		sleep(1)
 
 	print("Done.")
