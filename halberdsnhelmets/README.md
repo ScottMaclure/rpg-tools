@@ -1,6 +1,6 @@
 # RPG Tools
 
-## What?
+## What is this?
 
 Generate starting character PDFs to disk.
 
